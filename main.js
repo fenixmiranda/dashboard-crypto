@@ -31,13 +31,24 @@ new Chart(chart, {
 // Alteração de tema
 
 const themeBtn = document.querySelector('.theme-btn');
+var imgWhite = "./images/logo-viamais-azul.png";
+var imgDark = "./images/logo-branca.svg";
 
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
 
     themeBtn.querySelector('span:first-child').classList.toggle('active');
     themeBtn.querySelector('span:last-child').classList.toggle('active');
+
+    document.getElementById("logo").src = imgDark;
+    let aux = imgDark;
+    imgDark = imgWhite;
+    imgWhite = aux;
 })
+
+
+
+
 
 // show or hide sidebar 
 const menuBtn = document.querySelector('#menu-btn');
