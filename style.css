@@ -612,16 +612,16 @@ main .recent-transactions .card-details .card{
 }
 
 /*============================== MEDIA QUERIES FOR TABLETS ===============================*/
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     nav .search-bar{
-        display:none;
+        display: none;
     }
 
-    nav .profile-area{
+    nav .profile-area {
         gap: 2rem;
     }
 
-    nav .profile-area button#menu-tbn{
+    nav .profile-area button#menu-btn{
         display: inline;
         background: transparent;
         color: var(--color-dark);
@@ -631,16 +631,23 @@ main .recent-transactions .card-details .card{
         grid-template-columns: 1fr;
     }
 
-    main aside{
+    main aside {
         position: fixed;
         top: 0;
-        left: 0;
+        left: -100%;
         z-index: 3;
         background: var(--color-white);
         width: 22rem;
         height: 100vh;
         box-shadow: 2rem 0 2rem var(--color-primary-light);
         display: none;
+        animation: showSidebar 500ms ease forwards;
+    }
+
+    @keyframes showSidebar {
+        to{
+            left: 0;
+        }
     }
 
     main aside button#close-btn{
